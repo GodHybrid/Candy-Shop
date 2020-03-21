@@ -14,6 +14,28 @@ public class CustomBox implements IMysteryBox
         totalPrice = 0f;
     }
 
+    public CustomBox MakeRandom()
+    {
+        sweetsSet.clear();
+        for (int i = 0; i < 50 ; i++)
+        {
+            int rand = (int)(Math.random() * 4);
+            switch(rand)
+            {
+                case 0: Add(new Jelly());
+                    break;
+                case 1: Add(new ChocoBar());
+                    break;
+                case 2: Add(new Caramel());
+                    break;
+                case 3: Add(new Dragee());
+                    break;
+                default:
+            }
+        }
+        return this;
+    }
+
     ////////////////////////////////////Addition////////////////////////////////////////////////////////////
 
     public void Add(Sweets_abs addition) 
